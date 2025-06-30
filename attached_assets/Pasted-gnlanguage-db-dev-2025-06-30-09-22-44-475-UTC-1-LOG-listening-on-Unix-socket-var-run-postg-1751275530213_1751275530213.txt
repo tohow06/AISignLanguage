@@ -1,0 +1,32 @@
+gnlanguage-db-dev   | 2025-06-30 09:22:44.475 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+aisignlanguage-db-dev   | 2025-06-30 09:22:44.478 UTC [29] LOG:  database system was shut down at 2025-06-30 09:22:30 UTC
+aisignlanguage-db-dev   | 2025-06-30 09:22:44.482 UTC [1] LOG:  database system is ready to accept connections
+aisignlanguage-app-dev  | 
+aisignlanguage-app-dev  | > rest-express@1.0.0 dev
+aisignlanguage-app-dev  | > NODE_ENV=development tsx server/index.ts
+aisignlanguage-app-dev  | 
+node:internal/errors:496
+aisignlanguage-app-dev  |     ErrorCaptureStackTrace(err);
+aisignlanguage-app-dev  |     ^
+aisignlanguage-app-dev  | 
+aisignlanguage-app-dev  | TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+aisignlanguage-app-dev  |     at __node_internal_captureLargerStackTrace (node:internal/errors:496:5)
+aisignlanguage-app-dev  |     at new NodeError (node:internal/errors:405:5)
+aisignlanguage-app-dev  |     at validateString (node:internal/validators:162:11)
+aisignlanguage-app-dev  |     at Object.resolve (node:path:1115:7)
+aisignlanguage-app-dev  |     at <anonymous> (/app/vite.config.ts:21:17)
+aisignlanguage-app-dev  |     at ModuleJob.run (node:internal/modules/esm/module_job:195:25)
+aisignlanguage-app-dev  |     at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)
+aisignlanguage-app-dev  |     at async loadESM (node:internal/process/esm_loader:34:7)
+aisignlanguage-app-dev  |     at async handleMainPromise (node:internal/modules/run_main:106:12) {
+aisignlanguage-app-dev  |   code: 'ERR_INVALID_ARG_TYPE'
+aisignlanguage-app-dev  | }
+aisignlanguage-app-dev  | 
+aisignlanguage-app-dev  | Node.js v18.20.8
+
+aisignlanguage-app-dev exited with code 1
+Gracefully stopping... (press Ctrl+C again to force)
+[+] Stopping 2/2
+ ✔ Container aisignlanguage-app-dev  Stopped                                         0.0s 
+ ✔ Container aisignlanguage-db-dev   Stopped                                         0.2s 
+^C
