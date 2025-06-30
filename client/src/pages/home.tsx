@@ -59,10 +59,10 @@ export default function Home() {
       return response.json() as Promise<VideoStatus>;
     },
     enabled: !!requestId,
-    refetchInterval: (query) => {
-      // Keep polling while status is pending or processing
-      return query.data?.status === "pending" || query.data?.status === "processing" ? 2000 : false;
+    refetchInterval: (data) => {
+      return data?.status === "completed" || data?.status === "failed" ? false : 2000;
     },
+    refetchIntervalInBackground: false,
   });
 
   const handleSubmit = () => {
@@ -134,7 +134,7 @@ export default function Home() {
             <h1 className="text-3xl font-bold text-material-gray mb-2">
               AI Sign Language Interpreter
             </h1>
-            <p className="text-material-gray text-lg mb-4">AI Interpreter Assistant</p>
+            <p className="text-material-gray text-lg mb-4">Hi, I'm Lisa - Your AI Interpreter Assistant</p>
             
             {/* AI Interpreter Avatar */}
             <div className="mb-4">
@@ -145,7 +145,7 @@ export default function Home() {
               </div>
             </div>
             
-            <p className="text-material-gray-light text-lg">Convert your text into sign language videos</p>
+            <p className="text-material-gray-light text-lg">I can convert your text into sign language videos</p>
           </div>
         </div>
       </header>
@@ -158,8 +158,8 @@ export default function Home() {
           <Card>
             <CardContent className="p-6">
               <div className="text-center mb-6">
-                <h2 className="text-xl font-medium text-material-gray mb-2">Enter Your Text</h2>
-                <p className="text-material-gray-light">Type the phrase or sentence you'd like to convert to sign language</p>
+                <h2 className="text-xl font-medium text-material-gray mb-2">Tell Me What You Want to Say</h2>
+                <p className="text-material-gray-light">Type your message below and I'll create a sign language video for you</p>
               </div>
               
               <div className="max-w-2xl mx-auto space-y-4">
@@ -167,7 +167,7 @@ export default function Home() {
                   <label htmlFor="textInput" className="sr-only">Text to convert to sign language</label>
                   <Textarea 
                     id="textInput"
-                    placeholder="Enter your text here... (e.g., 'Hello, how are you today?')"
+                    placeholder="Tell me what you'd like to say... (e.g., 'Hello, how are you today?')"
                     className="w-full p-4 border-2 border-gray-300 rounded-lg focus:border-material-blue focus:ring-2 focus:ring-material-blue focus:ring-opacity-20 outline-none transition-all duration-200 resize-none min-h-[100px]"
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
@@ -181,7 +181,7 @@ export default function Home() {
                 {/* Error State */}
                 {hasError && (
                   <div className="bg-red-50 border border-material-error rounded-lg p-4 flex items-center">
-                    <span className="text-material-error">Failed to generate video. Please try again.</span>
+                    <span className="text-material-error">Sorry, I encountered an issue creating your video. Please try again!</span>
                   </div>
                 )}
                 
@@ -195,12 +195,12 @@ export default function Home() {
                     {isGenerating ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Generating...
+                        I'm working on it...
                       </>
                     ) : (
                       <>
                         <Play className="mr-2 h-4 w-4" />
-                        Generate Sign Language Video
+                        Let Me Create Your Video
                       </>
                     )}
                   </Button>
@@ -217,8 +217,8 @@ export default function Home() {
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-material-blue bg-opacity-10 rounded-full">
                     <Loader2 className="h-8 w-8 text-material-blue animate-spin" />
                   </div>
-                  <h3 className="text-lg font-medium text-material-gray">Generating Sign Language Video</h3>
-                  <p className="text-material-gray-light">Our AI is creating your personalized sign language interpretation...</p>
+                  <h3 className="text-lg font-medium text-material-gray">I'm Creating Your Sign Language Video</h3>
+                  <p className="text-material-gray-light">Please wait while I prepare your personalized sign language interpretation...</p>
                   
                   {/* Progress Bar */}
                   <div className="max-w-md mx-auto">
@@ -237,9 +237,9 @@ export default function Home() {
             <Card>
               <CardContent className="p-6">
                 <div className="text-center mb-6">
-                  <h2 className="text-xl font-medium text-material-gray mb-2">Your Sign Language Video</h2>
+                  <h2 className="text-xl font-medium text-material-gray mb-2">Here's Your Sign Language Video!</h2>
                   <p className="text-material-gray-light">
-                    Generated interpretation for: <span className="font-medium">"{videoStatus.inputText}"</span>
+                    I've created this interpretation for: <span className="font-medium">"{videoStatus.inputText}"</span>
                   </p>
                 </div>
                 
@@ -292,7 +292,7 @@ export default function Home() {
           <Card>
             <CardContent className="p-6">
               <div className="text-center mb-6">
-                <h2 className="text-xl font-medium text-material-gray mb-2">How It Works</h2>
+                <h2 className="text-xl font-medium text-material-gray mb-2">How I Help You</h2>
               </div>
               
               <div className="grid md:grid-cols-3 gap-6">
@@ -300,24 +300,24 @@ export default function Home() {
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-material-blue bg-opacity-10 rounded-full mb-4">
                     <Keyboard className="text-material-blue" size={24} />
                   </div>
-                  <h3 className="font-medium text-material-gray mb-2">1. Enter Text</h3>
-                  <p className="text-material-gray-light text-sm">Type or paste the text you want to convert to sign language</p>
+                  <h3 className="font-medium text-material-gray mb-2">1. Tell Me Your Message</h3>
+                  <p className="text-material-gray-light text-sm">Simply type what you'd like me to translate into sign language</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-material-blue bg-opacity-10 rounded-full mb-4">
                     <Brain className="text-material-blue" size={24} />
                   </div>
-                  <h3 className="font-medium text-material-gray mb-2">2. AI Processing</h3>
-                  <p className="text-material-gray-light text-sm">Our AI model generates accurate sign language movements</p>
+                  <h3 className="font-medium text-material-gray mb-2">2. I Process & Create</h3>
+                  <p className="text-material-gray-light text-sm">I analyze your text and generate accurate sign language movements</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-material-blue bg-opacity-10 rounded-full mb-4">
                     <Video className="text-material-blue" size={24} />
                   </div>
-                  <h3 className="font-medium text-material-gray mb-2">3. Watch Video</h3>
-                  <p className="text-material-gray-light text-sm">View and download your personalized sign language video</p>
+                  <h3 className="font-medium text-material-gray mb-2">3. Enjoy Your Video</h3>
+                  <p className="text-material-gray-light text-sm">Watch, download, and share your personalized sign language video</p>
                 </div>
               </div>
             </CardContent>
@@ -330,7 +330,7 @@ export default function Home() {
       <footer className="bg-white border-t border-gray-200 mt-12">
         <div className="max-w-4xl mx-auto px-4 py-6 text-center">
           <p className="text-material-gray-light text-sm">
-            © 2024 AI Sign Language Interpreter. Making communication accessible for everyone.
+            © 2025 Lisa - AI Sign Language Interpreter. I'm here to make communication accessible for everyone.
           </p>
         </div>
       </footer>
