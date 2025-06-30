@@ -59,9 +59,9 @@ export default function Home() {
       return response.json() as Promise<VideoStatus>;
     },
     enabled: !!requestId,
-    refetchInterval: (data) => {
+    refetchInterval: (query) => {
       // Keep polling while status is pending or processing
-      return data?.status === "pending" || data?.status === "processing" ? 2000 : false;
+      return query.data?.status === "pending" || query.data?.status === "processing" ? 2000 : false;
     },
   });
 
@@ -131,19 +131,20 @@ export default function Home() {
       <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 py-6">
           <div className="text-center">
+            <h1 className="text-3xl font-bold text-material-gray mb-2">
+              AI Sign Language Interpreter
+            </h1>
+            <p className="text-material-gray text-lg mb-4">AI Interpreter Assistant</p>
+            
             {/* AI Interpreter Avatar */}
-            <div className="mb-6">
+            <div className="mb-4">
               <div className="w-24 h-24 mx-auto bg-gradient-to-br from-material-blue to-material-blue-dark rounded-full flex items-center justify-center shadow-lg">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center">
                   <BicepsFlexed className="text-material-blue" size={36} />
                 </div>
               </div>
-              <p className="text-sm text-material-gray-light mt-2">AI Interpreter Assistant</p>
             </div>
             
-            <h1 className="text-3xl font-bold text-material-gray mb-2">
-              AI Sign Language Interpreter
-            </h1>
             <p className="text-material-gray-light text-lg">Convert your text into sign language videos</p>
           </div>
         </div>
