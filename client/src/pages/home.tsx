@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, Play, Download, Share, RotateCcw, BicepsFlexed, Keyboard, Brain, Video } from "lucide-react";
+import { Loader2, Play, Download, Share, RotateCcw, BicepsFlexed, Keyboard, Brain, Video, Mail, Github } from "lucide-react";
 import heeJooHeadshot from "@assets/Screenshot 2025-06-30 171450_1751334184032.png";
 
 interface VideoResponse {
@@ -129,23 +129,45 @@ export default function Home() {
   return (
     <div className="bg-gray-50 font-sans min-h-screen">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-4 py-6">
+      <header className="bg-gradient-to-br from-blue-50 to-white shadow-sm border-b-4 border-material-blue">
+        <div className="max-w-4xl mx-auto px-4 py-8">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-material-gray mb-3">
-              HeeJoo Kim
+              HeeJoo Hong
             </h1>
             <p className="text-material-blue text-xl font-medium mb-2">AI Sign Language Interpreter</p>
-            <p className="text-material-gray-light text-lg mb-6">Bridging communication gaps through AI-powered sign language interpretation</p>
+            <p className="text-material-gray-light text-lg mb-4">Bridging communication gaps through AI-powered sign language interpretation</p>
+            
+            {/* Contact Icons */}
+            <div className="flex justify-center gap-4 mb-6">
+              <a 
+                href="mailto:tohow0606@gmail.com"
+                className="inline-flex items-center justify-center w-10 h-10 bg-material-blue text-white rounded-full hover:bg-blue-600 transition-colors shadow-md"
+                aria-label="Email HeeJoo Hong"
+              >
+                <Mail size={20} />
+              </a>
+              <a 
+                href="https://github.com/tohow06/AISignLanguage"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 bg-material-blue text-white rounded-full hover:bg-blue-600 transition-colors shadow-md"
+                aria-label="View GitHub Repository"
+              >
+                <Github size={20} />
+              </a>
+            </div>
             
             {/* HeeJoo's Professional Headshot */}
             <div className="mb-6">
-              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-material-blue">
-                <img 
-                  src={heeJooHeadshot}
-                  alt="HeeJoo - AI Sign Language Interpreter"
-                  className="w-full h-full object-cover"
-                />
+              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-material-blue bg-gradient-to-br from-blue-100 to-blue-50 p-1">
+                <div className="w-full h-full rounded-full overflow-hidden">
+                  <img 
+                    src={heeJooHeadshot}
+                    alt="HeeJoo Hong - AI Sign Language Interpreter"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </div>
             
@@ -158,44 +180,11 @@ export default function Home() {
       <main className="max-w-4xl mx-auto px-4 py-8">
         <div className="space-y-8">
           
-          {/* About Me Section */}
-          <Card>
-            <CardContent className="p-6">
-              <div className="text-center mb-6">
-                <h2 className="text-2xl font-medium text-material-gray mb-4">About Me</h2>
-                <div className="max-w-3xl mx-auto text-material-gray-light leading-relaxed">
-                  <p className="mb-4">
-                    Hello! I'm HeeJoo, a professional AI Sign Language Interpreter dedicated to making communication accessible for everyone. 
-                    With advanced AI technology, I can transform your written text into clear, accurate sign language videos.
-                  </p>
-                  <p className="mb-4">
-                    My expertise lies in understanding context, emotion, and nuance in language to provide natural and expressive 
-                    sign language interpretations that truly convey your intended message.
-                  </p>
-                  <div className="flex flex-wrap justify-center gap-4 mt-6">
-                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
-                      AI Interpretation
-                    </span>
-                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
-                      Sign Language
-                    </span>
-                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
-                      Accessibility
-                    </span>
-                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
-                      Communication
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          
           {/* Text Input Section */}
           <Card>
             <CardContent className="p-6">
               <div className="text-center mb-6">
-                <h2 className="text-2xl font-medium text-material-gray mb-2">My Services</h2>
+                <h2 className="text-2xl font-medium text-material-gray mb-2">Try My Services</h2>
                 <p className="text-material-gray-light">Let me create a personalized sign language interpretation for your message</p>
               </div>
               
@@ -280,57 +269,88 @@ export default function Home() {
                   </p>
                 </div>
                 
-                <div className="max-w-3xl mx-auto">
-                  <div className="relative bg-gray-900 rounded-lg overflow-hidden shadow-lg">
-                    <video 
-                      className="w-full h-auto"
-                      controls
-                      src={videoStatus.videoUrl}
-                    >
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                  
-                  {/* Video Controls */}
-                  <div className="mt-4 flex flex-wrap justify-center gap-3">
-                    <Button 
-                      variant="outline"
-                      onClick={handleReplay}
-                      className="bg-gray-100 hover:bg-gray-200 text-material-gray"
-                    >
-                      <RotateCcw className="mr-2 h-4 w-4" />
-                      Replay
-                    </Button>
-                    
-                    <Button 
-                      variant="outline"
-                      onClick={handleDownload}
-                      className="bg-gray-100 hover:bg-gray-200 text-material-gray"
-                    >
-                      <Download className="mr-2 h-4 w-4" />
-                      Download
-                    </Button>
-                    
-                    <Button 
-                      variant="outline"
-                      onClick={handleShare}
-                      className="bg-gray-100 hover:bg-gray-200 text-material-gray"
-                    >
-                      <Share className="mr-2 h-4 w-4" />
-                      Share
-                    </Button>
-                  </div>
+                <div className="bg-black rounded-lg overflow-hidden max-w-2xl mx-auto mb-6">
+                  <video 
+                    controls 
+                    className="w-full h-auto"
+                    poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQ1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMDAwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPvCfkY4gU2lnbiBMYW5ndWFnZSBWaWRlbzwvdGV4dD48L3N2Zz4="
+                  >
+                    <source src={videoStatus?.videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                
+                <div className="flex justify-center gap-4">
+                  <Button 
+                    variant="outline"
+                    className="border-material-blue text-material-blue hover:bg-material-blue hover:text-white"
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Download Video
+                  </Button>
+                  <Button 
+                    variant="outline"
+                    className="border-material-blue text-material-blue hover:bg-material-blue hover:text-white"
+                  >
+                    <Share className="mr-2 h-4 w-4" />
+                    Share Video
+                  </Button>
+                  <Button 
+                    onClick={() => {
+                      setInputText("");
+                      setRequestId(null);
+                    }}
+                    variant="outline"
+                    className="border-material-blue text-material-blue hover:bg-material-blue hover:text-white"
+                  >
+                    <RotateCcw className="mr-2 h-4 w-4" />
+                    Create Another
+                  </Button>
                 </div>
               </CardContent>
             </Card>
           )}
+          
+          {/* About Me Section */}
+          <Card>
+            <CardContent className="p-6">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-medium text-material-gray mb-4">About Me</h2>
+                <div className="max-w-3xl mx-auto text-material-gray-light leading-relaxed">
+                  <p className="mb-4">
+                    Hello! I'm HeeJoo Hong, a professional AI Sign Language Interpreter dedicated to making communication accessible for everyone. 
+                    With advanced AI technology, I can transform your written text into clear, accurate sign language videos.
+                  </p>
+                  <p className="mb-4">
+                    My expertise lies in understanding context, emotion, and nuance in language to provide natural and expressive 
+                    sign language interpretations that truly convey your intended message.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-4 mt-6">
+                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
+                      AI Interpretation
+                    </span>
+                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
+                      Sign Language
+                    </span>
+                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
+                      Accessibility
+                    </span>
+                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
+                      Communication
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
 
           {/* Feature Info */}
           <Card>
             <CardContent className="p-6">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-medium text-material-gray mb-2">My Process</h2>
-                <p className="text-material-gray-light">How HeeJoo delivers professional sign language interpretations</p>
+                <p className="text-material-gray-light">How HeeJoo Hong delivers professional sign language interpretations</p>
               </div>
               
               <div className="grid md:grid-cols-3 gap-6">
@@ -368,7 +388,7 @@ export default function Home() {
       <footer className="bg-white border-t border-gray-200 mt-12">
         <div className="max-w-4xl mx-auto px-4 py-6 text-center">
           <p className="text-material-gray-light text-sm">
-            © 2025 HeeJoo Kim - Professional AI Sign Language Interpreter
+            © 2025 HeeJoo Hong - Professional AI Sign Language Interpreter
           </p>
           <p className="text-material-gray-light text-xs mt-2">
             Dedicated to making communication accessible through advanced AI technology

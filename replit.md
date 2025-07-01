@@ -101,8 +101,14 @@ This is a full-stack web application that converts text input into sign language
 - June 30, 2025. Rebranded to HeeJoo Kim with professional portfolio layout
 - June 30, 2025. Added larger professional headshot and portfolio-style About section
 - June 30, 2025. Transformed page structure to showcase HeeJoo's professional services
+- July 1, 2025. Updated name to HeeJoo Hong and added contact information
+- July 1, 2025. Added email and GitHub icons with blue styling in header
+- July 1, 2025. Enhanced header with blue gradient background and thicker borders
+- July 1, 2025. Moved demo section to front position as most important feature
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
-Personal branding: The AI interpreter is named "HeeJoo Kim" and the website should function as her professional portfolio, showcasing her expertise in AI sign language interpretation. The site should maintain a professional tone while being personal and approachable.
+Personal branding: The AI interpreter is named "HeeJoo Hong" and the website should function as her professional portfolio, showcasing her expertise in AI sign language interpretation. The site should maintain a professional tone while being personal and approachable.
+Contact information: Email tohow0606@gmail.com, GitHub https://github.com/tohow06/AISignLanguage
+Design preference: Blue color decoration, demo section prominently featured first.
