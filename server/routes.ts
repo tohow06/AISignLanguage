@@ -7,7 +7,7 @@ import { z } from "zod";
 // Simulate AI video generation with a delay
 async function generateSignLanguageVideo(text: string): Promise<string> {
   // Simulate processing time
-  await new Promise(resolve => setTimeout(resolve, 3000));
+  await new Promise(resolve => setTimeout(resolve, 200));
   
   // For "Nice to meet you", return the specific video file
   if (text.trim().toLowerCase() === "nice to meet you") {
