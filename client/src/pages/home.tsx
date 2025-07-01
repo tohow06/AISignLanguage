@@ -358,24 +358,24 @@ export default function Home() {
                 
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-material-blue bg-opacity-10 rounded-full mb-4">
-                      <Keyboard className="text-material-blue" size={24} />
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-material-blue rounded-full mb-4 shadow-lg">
+                      <Keyboard className="text-white" size={28} />
                     </div>
                     <h4 className="font-medium text-material-gray mb-2">1. Text Analysis</h4>
                     <p className="text-material-gray-light text-sm">I carefully analyze your message to understand context and meaning</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-material-blue bg-opacity-10 rounded-full mb-4">
-                      <Brain className="text-material-blue" size={24} />
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-material-blue rounded-full mb-4 shadow-lg">
+                      <Brain className="text-white" size={28} />
                     </div>
                     <h4 className="font-medium text-material-gray mb-2">2. AI Processing</h4>
                     <p className="text-material-gray-light text-sm">Advanced AI technology generates natural sign language movements</p>
                   </div>
                   
                   <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-material-blue bg-opacity-10 rounded-full mb-4">
-                      <Video className="text-material-blue" size={24} />
+                    <div className="inline-flex items-center justify-center w-16 h-16 bg-material-blue rounded-full mb-4 shadow-lg">
+                      <Video className="text-white" size={28} />
                     </div>
                     <h4 className="font-medium text-material-gray mb-2">3. Video Delivery</h4>
                     <p className="text-material-gray-light text-sm">Receive your professional interpretation ready to use and share</p>
