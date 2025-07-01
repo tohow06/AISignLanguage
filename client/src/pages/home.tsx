@@ -146,8 +146,8 @@ export default function Home() {
       {/* Header */}
       <header className="bg-gradient-to-br from-blue-50 to-white shadow-sm border-b-4 border-material-blue">
         <div className="max-w-4xl mx-auto px-4 py-8 relative">
-          {/* Contact Icons - Top Right */}
-          <div className="absolute top-4 right-4 flex gap-3">
+          {/* Contact Icons - Top Right, hidden on small screens, shown below name on mobile */}
+          <div className="hidden sm:flex absolute top-4 right-4 gap-3">
             <a 
               href="mailto:tohow0606@gmail.com"
               className="inline-flex items-center justify-center w-10 h-10 bg-material-blue text-white rounded-full hover:bg-blue-600 transition-colors shadow-md"
@@ -167,9 +167,29 @@ export default function Home() {
           </div>
           
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-material-gray mb-3">
+            <h1 className="text-3xl sm:text-4xl font-bold text-material-gray mb-3">
               HeeJoo Hong
             </h1>
+            
+            {/* Mobile Contact Icons - Below name on small screens */}
+            <div className="flex sm:hidden justify-center gap-3 mb-4">
+              <a 
+                href="mailto:tohow0606@gmail.com"
+                className="inline-flex items-center justify-center w-10 h-10 bg-material-blue text-white rounded-full hover:bg-blue-600 transition-colors shadow-md"
+                aria-label="Email HeeJoo Hong"
+              >
+                <Mail size={20} />
+              </a>
+              <a 
+                href="https://github.com/tohow06/AISignLanguage"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-10 h-10 bg-material-blue text-white rounded-full hover:bg-blue-600 transition-colors shadow-md"
+                aria-label="View GitHub Repository"
+              >
+                <Github size={20} />
+              </a>
+            </div>
             <p className="text-material-blue text-xl font-medium mb-2">AI Sign Language Interpreter</p>
             <p className="text-material-gray-light text-lg mb-6">Bridging communication gaps through AI-powered sign language interpretation</p>
             
