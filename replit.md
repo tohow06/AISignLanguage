@@ -98,8 +98,11 @@ This is a full-stack web application that converts text input into sign language
 - June 30, 2025. Initial setup
 - June 30, 2025. Added Lisa as AI interpreter with personal branding
 - June 30, 2025. Updated all website copy to be written from Lisa's first-person perspective
+- June 30, 2025. Rebranded to HeeJoo Kim with professional portfolio layout
+- June 30, 2025. Added larger professional headshot and portfolio-style About section
+- June 30, 2025. Transformed page structure to showcase HeeJoo's professional services
 
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
-Personal branding: The AI interpreter is named "Lisa" and all website content should be written from her first-person perspective, making it feel conversational and personal.
+Personal branding: The AI interpreter is named "HeeJoo Kim" and the website should function as her professional portfolio, showcasing her expertise in AI sign language interpretation. The site should maintain a professional tone while being personal and approachable.

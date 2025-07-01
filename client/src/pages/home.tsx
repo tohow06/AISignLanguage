@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, Play, Download, Share, RotateCcw, BicepsFlexed, Keyboard, Brain, Video } from "lucide-react";
-import lisaHeadshot from "@assets/Screenshot 2025-06-30 171450_1751334184032.png";
+import heeJooHeadshot from "@assets/Screenshot 2025-06-30 171450_1751334184032.png";
 
 interface VideoResponse {
   success: boolean;
@@ -132,17 +132,18 @@ export default function Home() {
       <header className="bg-white shadow-sm border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 py-6">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-material-gray mb-2">
-              AI Sign Language Interpreter
+            <h1 className="text-4xl font-bold text-material-gray mb-3">
+              HeeJoo Kim
             </h1>
-            <p className="text-material-gray text-lg mb-4">Hi, I'm Lisa - Your AI Interpreter Assistant</p>
+            <p className="text-material-blue text-xl font-medium mb-2">AI Sign Language Interpreter</p>
+            <p className="text-material-gray-light text-lg mb-6">Bridging communication gaps through AI-powered sign language interpretation</p>
             
-            {/* AI Interpreter Avatar */}
-            <div className="mb-4">
-              <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-lg border-4 border-material-blue">
+            {/* HeeJoo's Professional Headshot */}
+            <div className="mb-6">
+              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-material-blue">
                 <img 
-                  src={lisaHeadshot}
-                  alt="Lisa - AI Sign Language Interpreter"
+                  src={heeJooHeadshot}
+                  alt="HeeJoo - AI Sign Language Interpreter"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -157,12 +158,45 @@ export default function Home() {
       <main className="max-w-4xl mx-auto px-4 py-8">
         <div className="space-y-8">
           
+          {/* About Me Section */}
+          <Card>
+            <CardContent className="p-6">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-medium text-material-gray mb-4">About Me</h2>
+                <div className="max-w-3xl mx-auto text-material-gray-light leading-relaxed">
+                  <p className="mb-4">
+                    Hello! I'm HeeJoo, a professional AI Sign Language Interpreter dedicated to making communication accessible for everyone. 
+                    With advanced AI technology, I can transform your written text into clear, accurate sign language videos.
+                  </p>
+                  <p className="mb-4">
+                    My expertise lies in understanding context, emotion, and nuance in language to provide natural and expressive 
+                    sign language interpretations that truly convey your intended message.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-4 mt-6">
+                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
+                      AI Interpretation
+                    </span>
+                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
+                      Sign Language
+                    </span>
+                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
+                      Accessibility
+                    </span>
+                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
+                      Communication
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          
           {/* Text Input Section */}
           <Card>
             <CardContent className="p-6">
               <div className="text-center mb-6">
-                <h2 className="text-xl font-medium text-material-gray mb-2">Tell Me What You Want to Say</h2>
-                <p className="text-material-gray-light">Type your message below and I'll create a sign language video for you</p>
+                <h2 className="text-2xl font-medium text-material-gray mb-2">My Services</h2>
+                <p className="text-material-gray-light">Let me create a personalized sign language interpretation for your message</p>
               </div>
               
               <div className="max-w-2xl mx-auto space-y-4">
@@ -220,7 +254,7 @@ export default function Home() {
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-material-blue bg-opacity-10 rounded-full">
                     <Loader2 className="h-8 w-8 text-material-blue animate-spin" />
                   </div>
-                  <h3 className="text-lg font-medium text-material-gray">I'm Creating Your Sign Language Video</h3>
+                  <h3 className="text-lg font-medium text-material-gray">HeeJoo is Creating Your Sign Language Video</h3>
                   <p className="text-material-gray-light">Please wait while I prepare your personalized sign language interpretation...</p>
                   
                   {/* Progress Bar */}
@@ -240,9 +274,9 @@ export default function Home() {
             <Card>
               <CardContent className="p-6">
                 <div className="text-center mb-6">
-                  <h2 className="text-xl font-medium text-material-gray mb-2">Here's Your Sign Language Video!</h2>
+                  <h2 className="text-xl font-medium text-material-gray mb-2">Your Professional Sign Language Interpretation</h2>
                   <p className="text-material-gray-light">
-                    I've created this interpretation for: <span className="font-medium">"{videoStatus.inputText}"</span>
+                    HeeJoo has created this interpretation for: <span className="font-medium">"{videoStatus.inputText}"</span>
                   </p>
                 </div>
                 
@@ -295,7 +329,8 @@ export default function Home() {
           <Card>
             <CardContent className="p-6">
               <div className="text-center mb-6">
-                <h2 className="text-xl font-medium text-material-gray mb-2">How I Help You</h2>
+                <h2 className="text-2xl font-medium text-material-gray mb-2">My Process</h2>
+                <p className="text-material-gray-light">How HeeJoo delivers professional sign language interpretations</p>
               </div>
               
               <div className="grid md:grid-cols-3 gap-6">
@@ -303,24 +338,24 @@ export default function Home() {
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-material-blue bg-opacity-10 rounded-full mb-4">
                     <Keyboard className="text-material-blue" size={24} />
                   </div>
-                  <h3 className="font-medium text-material-gray mb-2">1. Tell Me Your Message</h3>
-                  <p className="text-material-gray-light text-sm">Simply type what you'd like me to translate into sign language</p>
+                  <h3 className="font-medium text-material-gray mb-2">1. Text Analysis</h3>
+                  <p className="text-material-gray-light text-sm">I carefully analyze your message to understand context and meaning</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-material-blue bg-opacity-10 rounded-full mb-4">
                     <Brain className="text-material-blue" size={24} />
                   </div>
-                  <h3 className="font-medium text-material-gray mb-2">2. I Process & Create</h3>
-                  <p className="text-material-gray-light text-sm">I analyze your text and generate accurate sign language movements</p>
+                  <h3 className="font-medium text-material-gray mb-2">2. AI Processing</h3>
+                  <p className="text-material-gray-light text-sm">Advanced AI technology generates natural sign language movements</p>
                 </div>
                 
                 <div className="text-center">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-material-blue bg-opacity-10 rounded-full mb-4">
                     <Video className="text-material-blue" size={24} />
                   </div>
-                  <h3 className="font-medium text-material-gray mb-2">3. Enjoy Your Video</h3>
-                  <p className="text-material-gray-light text-sm">Watch, download, and share your personalized sign language video</p>
+                  <h3 className="font-medium text-material-gray mb-2">3. Video Delivery</h3>
+                  <p className="text-material-gray-light text-sm">Receive your professional interpretation ready to use and share</p>
                 </div>
               </div>
             </CardContent>
@@ -333,7 +368,10 @@ export default function Home() {
       <footer className="bg-white border-t border-gray-200 mt-12">
         <div className="max-w-4xl mx-auto px-4 py-6 text-center">
           <p className="text-material-gray-light text-sm">
-            © 2025 Lisa - AI Sign Language Interpreter. I'm here to make communication accessible for everyone.
+            © 2025 HeeJoo Kim - Professional AI Sign Language Interpreter
+          </p>
+          <p className="text-material-gray-light text-xs mt-2">
+            Dedicated to making communication accessible through advanced AI technology
           </p>
         </div>
       </footer>
