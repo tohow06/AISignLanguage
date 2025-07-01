@@ -61,7 +61,11 @@ export default function Home() {
     },
     enabled: !!requestId,
     refetchInterval: (data) => {
-      return data?.status === "completed" || data?.status === "failed" ? false : 2000;
+      // Stop polling if video is completed or failed
+      if (data?.status === "completed" || data?.status === "failed") {
+        return false;
+      }
+      return 2000;
     },
     refetchIntervalInBackground: false,
   });
