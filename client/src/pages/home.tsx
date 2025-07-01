@@ -325,10 +325,7 @@ export default function Home() {
                     Hello! I'm HeeJoo Hong, a professional AI Sign Language Interpreter dedicated to making communication accessible for everyone. 
                     With advanced AI technology, I can transform your written text into clear, accurate sign language videos.
                   </p>
-                  <p className="mb-6">
-                    My expertise lies in understanding context, emotion, and nuance in language to provide natural and expressive 
-                    sign language interpretations that truly convey your intended message.
-                  </p>
+                  
                   <div className="flex flex-wrap justify-center gap-4 mb-8">
                     <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
                       AI Interpretation
