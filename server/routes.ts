@@ -9,7 +9,12 @@ async function generateSignLanguageVideo(text: string): Promise<string> {
   // Simulate processing time
   await new Promise(resolve => setTimeout(resolve, 3000));
   
-  // For demo purposes, return a sample video URL
+  // For "Nice to meet you", return the specific video file
+  if (text.trim().toLowerCase() === "nice to meet you") {
+    return "/attached_assets/nice_to_meet_you_edit_1751336691474.mp4";
+  }
+  
+  // For demo purposes, return a sample video URL for other inputs
   // In production, this would call an actual AI service
   const sampleVideos = [
     "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",

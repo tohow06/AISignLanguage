@@ -23,7 +23,7 @@ interface VideoStatus {
 }
 
 export default function Home() {
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = useState("Nice to meet you");
   const [requestId, setRequestId] = useState<number | null>(null);
   const { toast } = useToast();
 
@@ -86,6 +86,16 @@ export default function Home() {
         title: "Error",
         description: "Text must be less than 500 characters",
         variant: "destructive",
+      });
+      return;
+    }
+
+    // Check if input is exactly "Nice to meet you"
+    if (inputText.trim().toLowerCase() !== "nice to meet you") {
+      toast({
+        title: "Coming Soon",
+        description: "I'm still making other interpretations. For now, please try 'Nice to meet you'",
+        variant: "default",
       });
       return;
     }
@@ -195,7 +205,7 @@ export default function Home() {
             <CardContent className="p-6">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-medium text-material-gray mb-2">Try My Services</h2>
-                <p className="text-material-gray-light">Let me create a personalized sign language interpretation for your message</p>
+                <p className="text-material-gray-light">Experience my sign language interpretation with "Nice to meet you" - more phrases coming soon!</p>
               </div>
               
               <div className="max-w-2xl mx-auto space-y-4">
@@ -203,7 +213,7 @@ export default function Home() {
                   <label htmlFor="textInput" className="sr-only">Text to convert to sign language</label>
                   <Textarea 
                     id="textInput"
-                    placeholder="Tell me what you'd like to say... (e.g., 'Hello, how are you today?')"
+                    placeholder="Try 'Nice to meet you' to see my interpretation!"
                     className="w-full p-4 border-2 border-gray-300 rounded-lg focus:border-material-blue focus:ring-2 focus:ring-material-blue focus:ring-opacity-20 outline-none transition-all duration-200 resize-none min-h-[100px]"
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
