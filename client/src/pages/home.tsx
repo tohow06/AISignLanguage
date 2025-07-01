@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, Play, Download, Share, RotateCcw, BicepsFlexed, Keyboard, Brain, Video, Mail, Github } from "lucide-react";
 import heeJooHeadshot from "@assets/Screenshot 2025-06-30 171450_1751334184032.png";
+import heeJooHeadshotNew from "@assets/headshot_1751336151694.png";
 
 interface VideoResponse {
   success: boolean;
@@ -164,12 +165,17 @@ export default function Home() {
             
             {/* HeeJoo's Professional Headshot */}
             <div className="mb-6">
-              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-material-blue bg-gradient-to-br from-blue-100 to-blue-50 p-1">
-                <div className="w-full h-full rounded-full overflow-hidden">
+              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-material-blue bg-gradient-to-br from-blue-100 to-blue-50 p-1 group cursor-pointer">
+                <div className="w-full h-full rounded-full overflow-hidden relative">
+                  <img 
+                    src={heeJooHeadshotNew}
+                    alt="HeeJoo Hong - AI Sign Language Interpreter"
+                    className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-0"
+                  />
                   <img 
                     src={heeJooHeadshot}
                     alt="HeeJoo Hong - AI Sign Language Interpreter"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 </div>
               </div>
@@ -327,16 +333,16 @@ export default function Home() {
                   </p>
                   
                   <div className="flex flex-wrap justify-center gap-4 mb-8">
-                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
+                    <span className="bg-material-blue text-white px-4 py-2 rounded-full text-sm font-medium">
                       AI Interpretation
                     </span>
-                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
+                    <span className="bg-material-blue text-white px-4 py-2 rounded-full text-sm font-medium">
                       Sign Language
                     </span>
-                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
+                    <span className="bg-material-blue text-white px-4 py-2 rounded-full text-sm font-medium">
                       Accessibility
                     </span>
-                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
+                    <span className="bg-material-blue text-white px-4 py-2 rounded-full text-sm font-medium">
                       Communication
                     </span>
                   </div>
@@ -346,7 +352,7 @@ export default function Home() {
               {/* My Process Section within About Me */}
               <div className="border-t border-gray-200 pt-8">
                 <div className="text-center mb-6">
-                  <h3 className="text-xl font-medium text-material-gray mb-2">My Process</h3>
+                  <h3 className="text-xl font-medium text-material-gray mb-2">My Method</h3>
                   <p className="text-material-gray-light">How I deliver professional sign language interpretations</p>
                 </div>
                 
