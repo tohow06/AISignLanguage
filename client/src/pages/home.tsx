@@ -318,18 +318,24 @@ export default function Home() {
           {/* About Me Section */}
           <Card>
             <CardContent className="p-6">
-              <div className="text-center mb-8">
+              <div className="text-center mb-6">
                 <h2 className="text-2xl font-medium text-material-gray mb-4">About Me</h2>
                 <div className="max-w-3xl mx-auto text-material-gray-light leading-relaxed">
                   <p className="mb-4">
                     Hello! I'm HeeJoo Hong, a professional AI Sign Language Interpreter dedicated to making communication accessible for everyone. 
                     With advanced AI technology, I can transform your written text into clear, accurate sign language videos.
                   </p>
-                  <p className="mb-6">
+                  <p className="mb-4">
                     My expertise lies in understanding context, emotion, and nuance in language to provide natural and expressive 
-                    sign language interpretations that truly convey your intended message.
+                    sign language interpretations that truly convey your intended message. When you share your text with me, I begin with 
+                    careful analysis to understand the full context and meaning behind your words.
                   </p>
-                  <div className="flex flex-wrap justify-center gap-4 mb-8">
+                  <p className="mb-4">
+                    Using advanced AI technology, I then generate natural sign language movements that capture not just the literal translation, 
+                    but the emotional tone and intent of your message. The result is a professional video interpretation that's ready to use and share, 
+                    helping bridge communication gaps with authenticity and precision.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-4 mt-6">
                     <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
                       AI Interpretation
                     </span>
@@ -342,40 +348,6 @@ export default function Home() {
                     <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
                       Communication
                     </span>
-                  </div>
-                </div>
-              </div>
-              
-              {/* My Process Section within About Me */}
-              <div className="border-t border-gray-200 pt-8">
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-medium text-material-gray mb-2">My Process</h3>
-                  <p className="text-material-gray-light">How I deliver professional sign language interpretations</p>
-                </div>
-                
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-material-blue bg-opacity-10 rounded-full mb-4">
-                      <Keyboard className="text-material-blue" size={24} />
-                    </div>
-                    <h4 className="font-medium text-material-gray mb-2">1. Text Analysis</h4>
-                    <p className="text-material-gray-light text-sm">I carefully analyze your message to understand context and meaning</p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-material-blue bg-opacity-10 rounded-full mb-4">
-                      <Brain className="text-material-blue" size={24} />
-                    </div>
-                    <h4 className="font-medium text-material-gray mb-2">2. AI Processing</h4>
-                    <p className="text-material-gray-light text-sm">Advanced AI technology generates natural sign language movements</p>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-material-blue bg-opacity-10 rounded-full mb-4">
-                      <Video className="text-material-blue" size={24} />
-                    </div>
-                    <h4 className="font-medium text-material-gray mb-2">3. Video Delivery</h4>
-                    <p className="text-material-gray-light text-sm">Receive your professional interpretation ready to use and share</p>
                   </div>
                 </div>
               </div>
