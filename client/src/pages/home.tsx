@@ -179,6 +179,7 @@ export default function Home() {
           </div>
         </div>
       </header>
+
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 py-8">
         <div className="space-y-8">
@@ -326,7 +327,7 @@ export default function Home() {
                   </p>
                   
                   <div className="flex flex-wrap justify-center gap-4 mb-8">
-                    <span className="bg-opacity-10 px-4 py-2 rounded-full text-sm font-medium text-[#ffffff]">
+                    <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
                       AI Interpretation
                     </span>
                     <span className="bg-material-blue bg-opacity-10 text-material-blue px-4 py-2 rounded-full text-sm font-medium">
@@ -382,6 +383,7 @@ export default function Home() {
 
         </div>
       </main>
+
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 mt-12">
         <div className="max-w-4xl mx-auto px-4 py-6 text-center">
