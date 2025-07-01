@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, Play, Download, Share, RotateCcw, BicepsFlexed, Keyboard, Brain, Video } from "lucide-react";
+import lisaHeadshot from "@assets/Screenshot 2025-06-30 171450_1751334184032.png";
 
 interface VideoResponse {
   success: boolean;
@@ -138,10 +139,12 @@ export default function Home() {
             
             {/* AI Interpreter Avatar */}
             <div className="mb-4">
-              <div className="w-24 h-24 mx-auto bg-gradient-to-br from-material-blue to-material-blue-dark rounded-full flex items-center justify-center shadow-lg">
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center">
-                  <BicepsFlexed className="text-material-blue" size={36} />
-                </div>
+              <div className="w-24 h-24 mx-auto rounded-full overflow-hidden shadow-lg border-4 border-material-blue">
+                <img 
+                  src={lisaHeadshot}
+                  alt="Lisa - AI Sign Language Interpreter"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             
